@@ -27,7 +27,7 @@ class ListMushrooms extends React.Component {
         <ul>
           {this.state.mushrooms.map((mushroom) => {
             return (
-              <li index={mushroom.id}>{mushroom.genus} {mushroom.species}</li>
+              <li key={mushroom.id}>{mushroom.genus} {mushroom.species}</li>
             )
           } )}
         </ul>

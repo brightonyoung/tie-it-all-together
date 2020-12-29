@@ -208,10 +208,10 @@ d. Plan with Trello
 
   c. *(STEP 5.d)* Setup CodeShip for CI/CD or keep running `cloud app deploy` again and again. And again. *(311-15)*
 
-### Add the Front-End!
+### Add the Front-End/Client!
 
 1. Inside your server folder, run `npx create-react-app client`
-2. `cd client` and `npm i axios`
+2. `cd client` and `npm i axios redux react-redux react-router browser-router cookie-parser`
 3. Go to the `package.json` file in the `client` folder and add a proxy for the React App to use for all requests to the Express Server App.
 
         ```json
@@ -219,4 +219,18 @@ d. Plan with Trello
           "proxy": "http://localhost:5500"
         ```
 
-4. 
+4. Build a simple list component that fetches data from the server and renders it to the user
+5. Open two different terminals to run the server and the client separately and concurrently
+  
+    * `npm run dev` the server
+    * `npm start` the client
+
+6. TEST
+7.
+
+Redux
+React-Router >> Sign-Up or Sign-In
+Mushrooms are a protected Route that needs an authenticated token
+Authentication route in server
+Authentication
+Cookie

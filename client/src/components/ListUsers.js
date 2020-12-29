@@ -31,7 +31,7 @@ class ListUsers extends React.Component {
         <ul>
           {this.state.users.map((user) => {
             return (
-              <li index={user.id}>{user.firstName}</li>
+              <li key={user.id}>{user.firstName}</li>
             )
           } )}
         </ul>
