@@ -1,14 +1,18 @@
 require('dotenv').config()
 const express = require('express');
-const app = express();
 const bodyParser = require('body-parser')
+const cors = require('cors');
 
-const userRoutes = require('./server/routes/users')
-const mushroomRoutes = require('./server/routes/mushrooms')
+const userRoutes = require('./routes/users')
+const mushroomRoutes = require('./routes/mushrooms')
+
+const app = express();
 
 const port = process.env.PORT || 4000
 
+app.use(cors())
 app.use(bodyParser.json())
+
 app.use(userRoutes)
 app.use(mushroomRoutes)
 
