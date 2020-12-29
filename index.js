@@ -6,10 +6,9 @@ const cors = require('cors');
 const userRoutes = require('./routes/users')
 const mushroomRoutes = require('./routes/mushrooms')
 
-const app = express();
-
 const port = process.env.PORT || 4000
 
+const app = express();
 app.use(cors())
 app.use(bodyParser.json())
 

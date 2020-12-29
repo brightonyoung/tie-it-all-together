@@ -11,23 +11,31 @@ class ListUsers extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:5500/users')
-      .then(res => res.json)
-      .then(users => this.setState({users: users}, console.log('fetching users...', users)))
+    // fetch('/users')
+    //   .then(res => res.json())
+    //   .then(users => this.setState({users: users}, console.log('fetching users...', users)))
     
-  //   axios.get('http://localhost:5500/users')
-  //     .then(function (response) {
-  //       this.setState({users: response}, console.log("Users fetched...", {response}))
-  //     })
-  //     .catch(function (error) {
-  //       console.log(error);
-  //     })
+    axios.get('/users')
+      .then((response) => {
+        this.setState({users: response.data}, console.log("Users fetched...", {response}))
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
  }
-
 
   render() {
     return (
-      <h1>List Users Component!</h1>
+      <div>
+        <h1>List Users Component!</h1>
+        <ul>
+          {this.state.users.map((user) => {
+            return (
+              <li index={user.id}>{user.firstName}</li>
+            )
+          } )}
+        </ul>
+      </div>
     )
   }
 }

@@ -128,12 +128,15 @@ d. Plan with Trello
       * `"scripts": { "start": "nodemon ./index.js" }`
       * use `npm start` to TEST your app.
     d. Build `index.js` file *(311-3)*
-      * `import express` & `body-parser`
+      * `import` and `use()` `express()`, `body-parser.json()` & `cors()`
+      * `const port = process.env.PORT || 4000`
+      * *app.listen(port, () => console.log(`Server is listening on port: ${port}`))*
     e. Build folders:
       1. Create `routes` folder *(311-4)*
           * build a router file for each table of data you have
           * build a CRUD-L route for each
     *NOTE: CRUD-L = "Create, Read(get), Update, Delete & List"*
+          * Import the routes into `index.js` and `use()` them
 
       2. Create `controllers` folder *(311-4)*
           * Build a controller file for each table of data
@@ -208,4 +211,12 @@ d. Plan with Trello
 ### Add the Front-End!
 
 1. Inside your server folder, run `npx create-react-app client`
-1. 
+2. `cd client` and `npm i axios`
+3. Go to the `package.json` file in the `client` folder and add a proxy for the React App to use for all requests to the Express Server App.
+
+        ```json
+          ,
+          "proxy": "http://localhost:5500"
+        ```
+
+4. 
