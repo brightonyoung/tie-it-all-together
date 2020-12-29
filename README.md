@@ -122,27 +122,29 @@ d. Plan with Trello
     h. Run SELECT statements to test the database is up and responding from GoogleCloud
 
 3. *(STEP 5.c)* Create GitHub Repo for the Source Code of Your Server
-    a. Create blank repo(no README), clone it, & npm init (101)
+    a. Create blank repo(no README), clone it and run `npm init` (101)
     b. Install dependencies you'll need. Run `npm i express body-parser nodemon mysql dotenv cors` *(311-3)* [AustinCodingAcademy/311_wk2_day1_express](https://github.com/AustinCodingAcademy/311_wk2_day1_express/blob/master/package.json)
     c. Set `package.json` up with starting scripts:
       * `"scripts": { "start": "nodemon ./index.js" }`
       * use `npm start` to TEST your app.
-    d. Build `index.js` file *(311-3)*
+    d. run `touch index.js` *(311-3)*
       * `import` and `use()` `express()`, `body-parser.json()` & `cors()`
       * `const port = process.env.PORT || 4000`
+      * `app.get('/', (req, res) => {res.send("Backend Says Hello!")})`
       * *app.listen(port, () => console.log(`Server is listening on port: ${port}`))*
-    e. Build folders:
-      1. Create `routes` folder *(311-4)*
+    f. Run `mkdir server` then `cd server` then build folders:
+      1. `mkdir routes` folder *(311-4)*
+          * `/api/users` etc...
           * build a router file for each table of data you have
           * build a CRUD-L route for each
     *NOTE: CRUD-L = "Create, Read(get), Update, Delete & List"*
           * Import the routes into `index.js` and `use()` them
 
-      2. Create `controllers` folder *(311-4)*
+      2. `mkdir controllers` folder *(311-4)*
           * Build a controller file for each table of data
           * build a CRUD-L controller for each route
           * Test your routes and controllers with dummy responses
-      3. Create a `sql` folder with:
+      3. Create a `mkdir sql` folder with:
           * a `connection.js` file that uses mysql *(311- 8)*
           * an `error.js` file
           * test by running the server - “npm start”
@@ -210,8 +212,8 @@ d. Plan with Trello
 
 ### Add the Front-End/Client!
 
-1. Inside your server folder, run `npx create-react-app client`
-2. `cd client` and `npm i axios redux react-redux react-router browser-router cookie-parser`
+1. Inside the main folder, run `npx create-react-app client` to create a React app named client
+2. `cd client` and `npm i axios redux react-redux react-router-dom react-router cookie-parser @material-ui/core`
 3. Go to the `package.json` file in the `client` folder and add a proxy for the React App to use for all requests to the Express Server App.
 
         ```json
@@ -226,7 +228,7 @@ d. Plan with Trello
     * `npm start` the client
 
 6. TEST
-7.
+7. Teach GCD how to run Client and Server at the same time
 
 Redux
 React-Router >> Sign-Up or Sign-In

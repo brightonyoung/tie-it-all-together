@@ -11,7 +11,7 @@ class ListMushrooms extends React.Component {
   }
 
   componentDidMount() {    
-    axios.get('/mushrooms')
+    axios.get('/api/mushrooms')
       .then((response) => {
         this.setState({mushrooms: response.data}, console.log("mushrooms fetched...", {response}))
       })

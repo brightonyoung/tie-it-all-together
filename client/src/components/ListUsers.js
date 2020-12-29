@@ -15,7 +15,7 @@ class ListUsers extends React.Component {
     //   .then(res => res.json())
     //   .then(users => this.setState({users: users}, console.log('fetching users...', users)))
     
-    axios.get('/users')
+    axios.get('/api/users')
       .then((response) => {
         this.setState({users: response.data}, console.log("Users fetched...", {response}))
       })
