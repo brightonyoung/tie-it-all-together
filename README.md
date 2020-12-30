@@ -215,7 +215,7 @@ d. Plan with Trello
 
 ## STEP 6: Build and Host the Front-End/Client!
 
-<!-- ! These steps are for running two separate app the front-end in a bucket and the backend on App Engine. For server-side rendering see `index.js` -->
+<!-- ! These steps are for running two separate apps the front-end in a bucket and the backend on App Engine. For server-side rendering see `index.js` -->
 
 1. Create a new folder and run `npx create-react-app nameOfYourApp`.
 2. CD and begin building.
@@ -225,5 +225,6 @@ d. Plan with Trello
     d. Protected Routes *(411-8)*
     e. Does your api require Authentication? Store cookies when login in.
     f. If needed, Redux *(411-9)*
-3. Make sure you're using the URL to your hosted App
+3. Make sure you're using the URL to your hosted server app
 4. Host the React App in a Bucket - *(311-14)*
+5. Optionally, create a custom domain name for it.
