@@ -1,11 +1,12 @@
 require('dotenv').config()
 const mysql = require('mysql')
+// !You MUST create a .env file with these values in it.
 
 class Connection {
   constructor() {
     if (!this.pool) {
       console.log('creating mysql connection...')
-
+      
       const config = {
         connectionLimit: 100,
         host: process.env.DB_HOST,

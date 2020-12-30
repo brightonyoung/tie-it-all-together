@@ -19,7 +19,10 @@ STEP 5. Implement & Schedule the Build
   b. Connect and build tables with MySQL Workbench
   c. Create Repo, Clone, Build Server, Test, Push Code
   d. Host CI/CD *(optional step now/required step later)*
-  e. Serve Static React app
+STEP 6. Build and Deploy the Front-End
+  a. Build the app
+  b. Deploy the app
+  c. Add custom Domain (optional)
 
 ## STEP 1 & 2: Ideation & MVP
 
@@ -101,7 +104,7 @@ d. Plan with Trello
 
   *SUGGESTION: Use Step 5 below to create the smaller Todo cards on Trello!*
 
-## STEP 5: Create Database, Server and Front-End App on an Instance(Virtual Computer) on GoogleCloud
+## STEP 5: Create Database, Server on an Instance(Virtual Computer) on GoogleCloud
 
 1. *(STEP 5.a)* Create a Database on GoogleCloud *(311-5 Databases)* - [How to GoogleCloud](https://youtu.be/ypQaSyICc3A)
     a. Copy/paste & store the DB name, password, connection name, and IP somewhere you can find easily
@@ -123,7 +126,7 @@ d. Plan with Trello
 
 3. *(STEP 5.c)* Create GitHub Repo for the Source Code of Your Server
     a. Create blank repo(no README), clone it and run `npm init` (101)
-    b. Install dependencies you'll need. Run `npm i express body-parser nodemon mysql dotenv cors` *(311-3)* [AustinCodingAcademy/311_wk2_day1_express](https://github.com/AustinCodingAcademy/311_wk2_day1_express/blob/master/package.json)
+    b. Install dependencies you'll need. Run `npm i express body-parser nodemon mysql dotenv cors path` *(311-3)* [AustinCodingAcademy/311_wk2_day1_express](https://github.com/AustinCodingAcademy/311_wk2_day1_express/blob/master/package.json)
     c. Set `package.json` up with starting scripts:
       * `"scripts": { "start": "nodemon ./index.js" }`
       * use `npm start` to TEST your app.
@@ -187,7 +190,7 @@ d. Plan with Trello
               runtime: nodejs10
               
               env_variables: 
-                CLOUD_INSTANCE: YOUR-SQL-Instance-Connection-Name-Here
+                CLOUD_INSTANCE: YOUR-SQL-Database-Connection-Name-Here
             ```
 
     5. Add `app.yaml` to your `.gitignore` file
@@ -210,29 +213,17 @@ d. Plan with Trello
 
   c. *(STEP 5.d)* Setup CodeShip for CI/CD or keep running `cloud app deploy` again and again. And again. *(311-15)*
 
-### Add the Front-End/Client!
+## STEP 6: Build and Host the Front-End/Client!
 
-1. Inside the main folder, run `npx create-react-app client` to create a React app named client
-2. `cd client` and `npm i axios redux react-redux react-router-dom react-router cookie-parser @material-ui/core`
-3. Go to the `package.json` file in the `client` folder and add a proxy for the React App to use for all requests to the Express Server App.
+<!-- ! These steps are for running two separate app the front-end in a bucket and the backend on App Engine. For server-side rendering see `index.js` -->
 
-        ```json
-          ,
-          "proxy": "http://localhost:5500"
-        ```
-
-4. Build a simple list component that fetches data from the server and renders it to the user
-5. Open two different terminals to run the server and the client separately and concurrently
-  
-    * `npm run dev` the server
-    * `npm start` the client
-
-6. TEST
-7. Teach GCD how to run Client and Server at the same time
-
-Redux
-React-Router >> Sign-Up or Sign-In
-Mushrooms are a protected Route that needs an authenticated token
-Authentication route in server
-Authentication
-Cookie
+1. Create a new folder and run `npx create-react-app nameOfYourApp`.
+2. CD and begin building.
+    a. BrowserRouter, Router, Switch, Routes *(411-7)*
+    b. Component Pages
+    c. Individual/Micro Components
+    d. Protected Routes *(411-8)*
+    e. Does your api require Authentication? Store cookies when login in.
+    f. If needed, Redux *(411-9)*
+3. Make sure you're using the URL to your hosted App
+4. Host the React App in a Bucket - *(311-14)*
