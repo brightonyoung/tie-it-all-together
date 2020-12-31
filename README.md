@@ -1,9 +1,10 @@
 # Tie It All Together
 
-## Steps of the Process
+## Steps of the Process to Building & Deploying Your Capstone App
 
 STEP 1. Ideation
-  a. What problem needs to be solved and what solution can you imagine for it?
+  a. What problem needs to be solved?
+  b. What solution can you imagine for it?
 STEP 2. MVP/v0.0.1
   a. What’s the bare bones version of this solution?
 STEP 3. Identify Data Needs
@@ -14,14 +15,14 @@ STEP 4. Design & Plan
   a. View Layout and Needs
   b. Server Functionality Needs
   c. Database entities and relationships
-STEP 5. Implement & Schedule the Build
+STEP 5. Implement & Schedule the Build of the DB & Server
   a. Google Cloud Account, Instance, Database, Connection
   b. Connect and build tables with MySQL Workbench
   c. Create Repo, Clone, Build Server, Test, Push Code
   d. Host CI/CD *(optional step now/required step later)*
 STEP 6. Build and Deploy the Front-End
-  a. Build the app
-  b. Deploy the app
+  a. Create Repo, Clone, Build Front-End App, Test, Push Code
+  b. Deploy the app to a GoogleCloud Bucket
   c. Add custom Domain (optional)
 
 ## STEP 1 & 2: Ideation & MVP
@@ -29,13 +30,14 @@ STEP 6. Build and Deploy the Front-End
 * Student Presentations *(end of 101, beginning of 211, 311, 411)*
 * Blogs
 * ER Diagrams *(311-11)*
+* MVP - Minimum Viable Product
 
 ## STEP 3: Identify Data Needs
 
 The Three Jobs of a Software Developer
   a. Render - What’s the view of the data look like for the human-user?
   b. Move - How does the data get to the view from the database and vice-versa? Server Routes.
-  c. Storage - What tables will you need to organize and store your data? What properties does each entity need?
+  c. Store - What tables will you need to organize and store your data? What properties does each entity need?
 
 ## STEP 4: Design & Plan
 
@@ -228,3 +230,19 @@ d. Plan with Trello
 3. Make sure you're using the URL to your hosted server app
 4. Host the React App in a Bucket - *(311-14)*
 5. Optionally, create a custom domain name for it.
+
+## Bonus
+
+1. Think of your app in parts: Database, Server App, Front-End App
+  b. How will they each be deployed/made available to the internet?
+2. When adding a new feature to your app first ask:
+  a. What's the goal of this feature?
+  b. What Visual rendering will need to be built for this new feature?
+  c. What type of data will need to be stored for this new feature?
+  d. How will I move that data from the database to the user's front-end?
+  e. What don't I know that I need to learn to build this new feature?
+3. Multiple ways to deploy:
+  a. SSR - Server-Side Rendering
+  b. CSR - Client-Side Rendering
+    * bundled and running `concurrently`/in `parallel` on the same server
+    * *Back- and Front- are deployed separately but are talking to one another and passing credentials back and forth.*
