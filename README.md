@@ -41,34 +41,28 @@ The Three Jobs of a Software Developer
 
 ## STEP 4: Design & Plan
 
-View Layout and Needs
-  a. What does the User's Journey look like? Create a road map.
+1. View Layout and Needs
+  a. What does the User's Journey look like? Create a road map to objectify the task.
 
+    * User-Centered Design  
     * Where do they start?
     * What does sign-up vs sign-in look like?
     * What does the next step look like?
     * What can they do in the app?
+    * [How to Create a User-Experience Flow Chart](https://www.startuprocket.com/articles/how-to-create-a-user-experience-flow-chart-ux-flow-chart)
 
   b. Draw it out. Visualize!
 
-    * Build a paper prototype
-    * [Use software to help](https://medium.theuxblog.com/11-best-prototyping-tools-for-ui-ux-designers-how-to-choose-the-right-one-c5dc69720c47?gi=a052754cdb05)
+    * Build a paper prototype and [use software to help](https://medium.theuxblog.com/11-best-prototyping-tools-for-ui-ux-designers-how-to-choose-the-right-one-c5dc69720c47?gi=a052754cdb05)
   
   c. Material-UI
 
     * What components do you need?
     * List them out.
     * Write them on index cards so you don't get lost. 
+    * DON'T WORRY ABOUT COLOR!!!!
 
-  d. DON'T WORRY ABOUT COLOR!!!!
-
-b. Server Functionality
-
-  a. Component Needs
-
-    * Look at each component and the data they'll need. Are there any special routes needed outside of the CRUD-L or Authentication routes?
-
-c. The Database, Entities, Relationships & Properties
+2.The Database, Entities, Relationships & Properties *(311-11)*
 
   a. What bits of data will you need?
 
@@ -76,9 +70,16 @@ c. The Database, Entities, Relationships & Properties
     * What properties do they have?
     * What relationships do they have? 
 
+3.Server Functionality
+
+  a. Front-End Needs
+
+    * Look at each component and the data they'll need. 
+    * Are there any special routes needed outside of the CRUD-L or Authentication routes? *(311-12) & (411-8)*
+
 *SUGGESTION: Use sticky notes and index cards to write and draw all of this out so you can visualize and stay on task.*
 
-d. Plan with Trello
+4.Plan with Trello
 
   a. Build your lanes
 
@@ -86,25 +87,26 @@ d. Plan with Trello
     * Doing
     * Review
     * Merged/Done
+    * Icebox
 
-  b. Build three cards
+  b. Start with just three cards:
 
-    * Build Database: Store Data
-    * Build Server: Move & Manipulate Data
-    * Build Front-End: Render Data
+    * Build Database to Store Data
+    * Build Server to Move & Manipulate Data
+    * Build Front-End to Render Data
 
   c. Break those cards into smaller Todo cards
 
     * Create Google Cloud Account
-    * Create Instance
+    * Create Instance(Virtual Computer)
+    * Create Database/Schema
     * Save Database connection info
-    * Create Schema
     * Plan tables ...build CREATE Sql statements, connect, build tables, seed with fake data, etc.
     * Move to breakdown Server steps...
     * Move on to breakdown Front-end steps....
     * Take breaks and breathe!!
 
-  *SUGGESTION: Use Step 5 below to create the smaller Todo cards on Trello!*
+  *SUGGESTION: Use Steps 5 & 6, below, to create the smaller Todo cards on Trello!*
 
 ## STEP 5: Create Database, Server on an Instance(Virtual Computer) on GoogleCloud
 
@@ -123,8 +125,8 @@ d. Plan with Trello
     e. test connection >> Success!
     f. Select Schema
       * Side Bar > Schema > Refresh Button > Select Database/Schema *(see 1c, above)*
-    g. Insert data with initialization commands…CREATE TABLE…etc.
-    h. Run SELECT statements to test the database is up and responding from GoogleCloud
+    g. Insert data with initialization commands…CREATE TABLE…etc. *(311-11)*
+    h. TEST by running SELECT statements to test the database is up and responding from GoogleCloud
 
 3. *(STEP 5.c)* Create GitHub Repo for the Source Code of Your Server
     a. Create blank repo(no README), clone it and run `npm init` (101)
@@ -144,13 +146,12 @@ d. Plan with Trello
           * build a CRUD-L route for each
     *NOTE: CRUD-L = "Create, Read(get), Update, Delete & List"*
           * Import the routes into `index.js` and `use()` them
-
       2. `mkdir controllers` folder *(311-4)*
           * Build a controller file for each table of data
           * build a CRUD-L controller for each route
           * Test your routes and controllers with dummy responses
       3. Create a `mkdir sql` folder with:
-          * a `connection.js` file that uses mysql *(311- 8)*
+          * a `connection.js` file that uses mysql *(311-8)*
           * an `error.js` file
           * test by running the server - “npm start”
     f. Import the connection pool into the controller files *(311-8)*
@@ -217,7 +218,7 @@ d. Plan with Trello
 
 ## STEP 6: Build and Host the Front-End/Client!
 
-<!-- ! These steps are for running two separate apps the front-end in a bucket and the backend on App Engine. For server-side rendering see `index.js` -->
+<!-- ! These steps are for running two separate apps, the front-end in a bucket and the backend on App Engine. For server-side rendering see `index.js` -->
 
 1. Create a new folder and run `npx create-react-app nameOfYourApp`.
 2. CD and begin building.
@@ -225,8 +226,9 @@ d. Plan with Trello
     b. Component Pages
     c. Individual/Micro Components
     d. Protected Routes *(411-8)*
-    e. Does your api require Authentication? Store cookies when login in.
+    e. Does your api require Authentication? Store cookies when login in. *(311-12)*
     f. If needed, Redux *(411-9)*
+    g. Does it need to be a Class-Based Component? `useState()`, `useEffect()` and `useReducer()`
 3. Make sure you're using the URL to your hosted server app
 4. Host the React App in a Bucket - *(311-14)*
 5. Optionally, create a custom domain name for it.
